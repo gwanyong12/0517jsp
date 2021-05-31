@@ -1,22 +1,26 @@
 package com.sbs.example.jspCommunity.dto;
 
 import java.time.LocalDateTime;
+
 import java.util.Map;
 
-public class Member {
-	public int id;
-	public LocalDateTime regDate;
-	public LocalDateTime updateDate;
-	public String loginId;
-	public String loginPw;
-	public String name;
-	public String nickname;
-	public String email;
-	public int authLevel;
+import lombok.Data;
 
-	public String extra__writer;
-	public String extra__boardName;
-	public String extra__boardCode;
+@Data
+public class Member {
+	private int id;
+	private LocalDateTime regDate;
+	private LocalDateTime updateDate;
+	private String loginId;
+	private String loginPw;
+	private String name;
+	private String nickname;
+	private String email;
+	private int authLevel;
+
+	private String extra__writer;
+	private String extra__boardName;
+	private String extra__boardCode;
 
 	public Member(Map<String, Object> map) {
 		this.id = (int) map.get("id");
@@ -28,14 +32,6 @@ public class Member {
 		this.nickname = (String) map.get("nickname");
 		this.email = (String) map.get("email");
 		this.authLevel = (int) map.get("authLevel");
-	}
-
-	@Override
-	public String toString() {
-		return "Member [id=" + id + ", regDate=" + regDate + ", updateDate=" + updateDate + ", loginId=" + loginId
-				+ ", loginPw=" + loginPw + ", name=" + name + ", nickname=" + nickname + ", email=" + email
-				+ ", authLevel=" + authLevel + ", extra__writer=" + extra__writer + ", extra__boardName="
-				+ extra__boardName + ", extra__boardCode=" + extra__boardCode + "]";
 	}
 
 }
